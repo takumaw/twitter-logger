@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3
 
 RUN set -ex \
     && mkdir /usr/local/src/twitter_logger
