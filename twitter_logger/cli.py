@@ -14,6 +14,8 @@ Usage:
     (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) (-t TARGET_USERS_FILE | USER [USER...])
   twitter_logger followers [-v] -H HOST:PORT -D DATABASE -C COLLECTION
     (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) (-t TARGET_USERS_FILE | USER [USER...])
+  twitter_logger users [-v] -H HOST:PORT -D DATABASE -C COLLECTION
+    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) (-t TARGET_USERS_FILE | USER [USER...])
 
 Options:
   --help                Show usage help.
