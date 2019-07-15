@@ -50,6 +50,6 @@ class Status(Base):
                 if statuses:
                     for s in statuses:
                         common.parse_created_at(s)
-                        s["_timestamp"] = datetime.datetime.utcnow()
+                        s["_crawled_at"] = datetime.datetime.utcnow()
                     self.mongo_collection.insert_many(statuses)
                 logging.info("    saved {} items.".format(statuses))
