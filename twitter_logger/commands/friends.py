@@ -21,8 +21,6 @@ class Friends(Base):
     """Friends crawler"""
 
     def run(self):
-        print("Hello")
-        
         self.setup_db()
         self.setup_api()
 
@@ -49,4 +47,4 @@ class Friends(Base):
                 }
                 
                 self.mongo_collection.insert_one(friends)
-                logging.info("    saved {} items.".format(friends_users))
+                logging.info("    saved {} items.".format(len(friends_users)))

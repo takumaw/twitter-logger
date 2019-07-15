@@ -1,5 +1,6 @@
 from .base import *
 from .favorites import *
+from .friends import *
 from .status import *
 from .userstream import *
 
