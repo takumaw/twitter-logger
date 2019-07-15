@@ -52,3 +52,7 @@ class Favorites(Base):
                         f["_by_user_id"] = user["user_id"]
                     self.mongo_collection.insert_many(favs)
                 logging.info("    saved {} items.".format(len(favs)))
+
+            if self.interval:
+                logging.info("Sleep for {} seconds.".format(self.interval))
+                time.sleep(self.interval)

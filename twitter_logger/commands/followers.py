@@ -48,3 +48,7 @@ class Followers(Base):
                 
                 self.mongo_collection.insert_one(followers)
                 logging.info("    saved {} items.".format(len(followers_users)))
+            
+            if self.interval:
+                logging.info("Sleep for {} seconds.".format(self.interval))
+                time.sleep(self.interval)

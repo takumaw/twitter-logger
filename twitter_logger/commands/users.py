@@ -50,3 +50,7 @@ class Users(Base):
                         u["_crawled_at"] = datetime.datetime.utcnow()
                     self.mongo_collection.insert_many(users)
                 logging.info("    saved {} items.".format(len(users)))
+            
+            if self.interval:
+                logging.info("Sleep for {} seconds.".format(self.interval))
+                time.sleep(self.interval)

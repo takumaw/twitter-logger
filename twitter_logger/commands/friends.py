@@ -48,3 +48,7 @@ class Friends(Base):
                 
                 self.mongo_collection.insert_one(friends)
                 logging.info("    saved {} items.".format(len(friends_users)))
+            
+            if self.interval:
+                logging.info("Sleep for {} seconds.".format(self.interval))
+                time.sleep(self.interval)

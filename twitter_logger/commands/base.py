@@ -44,6 +44,8 @@ class Base(object):
 
         self.target_users = []
 
+        self.interval = 0
+
         self.parse_options()
         self.setup_logger()
 
@@ -112,6 +114,15 @@ class Base(object):
                 self.consumer_secret = os.getenv("TWITTER_CONSUMER_SECRET")
                 self.access_key = os.getenv("TWITTER_ACCESS_KEY")
                 self.access_secret = os.getenv("TWITTER_ACCESS_SECRET")
+        
+        # Parse interval
+        if self.options.get("--interval"):
+            try:
+                self.interval = int(self.options.get("INTERVAL"))
+            except ValueError as err:
+                print("INTERVAL should be a number.",
+                      file=sys.stderr)
+                sys.exit(1)
 
         # Parse target users
         if self.options.get("--targets"):

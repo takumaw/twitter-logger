@@ -53,3 +53,7 @@ class Status(Base):
                         s["_crawled_at"] = datetime.datetime.utcnow()
                     self.mongo_collection.insert_many(statuses)
                 logging.info("    saved {} items.".format(len(statuses)))
+            
+            if self.interval:
+                logging.info("Sleep for {} seconds.".format(self.interval))
+                time.sleep(self.interval)

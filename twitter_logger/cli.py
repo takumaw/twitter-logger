@@ -7,15 +7,15 @@ Usage:
   twitter_logger userstream [-v] -H HOST:PORT -D DATABASE
     (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET)
   twitter_logger status [-v] -H HOST:PORT -D DATABASE -C COLLECTION
-    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) (-t TARGET_USERS_FILE | USER [USER...])
+    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) [--interval INTERVAL] (-t TARGET_USERS_FILE | USER [USER...])
   twitter_logger favorites [-v] -H HOST:PORT -D DATABASE -C COLLECTION
-    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) (-t TARGET_USERS_FILE | USER [USER...])
+    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) [--interval INTERVAL] (-t TARGET_USERS_FILE | USER [USER...])
   twitter_logger friends [-v] -H HOST:PORT -D DATABASE -C COLLECTION
-    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) (-t TARGET_USERS_FILE | USER [USER...])
+    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) [--interval INTERVAL] (-t TARGET_USERS_FILE | USER [USER...])
   twitter_logger followers [-v] -H HOST:PORT -D DATABASE -C COLLECTION
-    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) (-t TARGET_USERS_FILE | USER [USER...])
+    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) [--interval INTERVAL] (-t TARGET_USERS_FILE | USER [USER...])
   twitter_logger users [-v] -H HOST:PORT -D DATABASE -C COLLECTION
-    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) (-t TARGET_USERS_FILE | USER [USER...])
+    (-c CREDENTIAL_FILE | --credential-env | --consumer-key CONSUMER_KEY --consumer-secret CONSUMER_SECRET --access-key ACCESS_KEY --access-secret ACCESS_SECRET) [--interval INTERVAL] (-t TARGET_USERS_FILE | USER [USER...])
 
 Options:
   --help                Show usage help.
@@ -31,6 +31,7 @@ Options:
   --access-key          Specify ACCESS_KEY.
   --access-secret       Specify ACCESS_SECRET.
   -t --targets          Specify target users file.
+  --interval            Retrieval interval in seconds.
 """
 
 
