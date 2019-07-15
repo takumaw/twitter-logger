@@ -45,11 +45,11 @@ class Status(Base):
                 except tweepy.TweepError as err:
                     logging.error(traceback.format_exc())
                     continue
-                logging.info("    received {} items.".format(statuses))
+                logging.info("    received {} items.".format(len(statuses)))
 
                 if statuses:
                     for s in statuses:
                         common.parse_created_at(s)
                         s["_crawled_at"] = datetime.datetime.utcnow()
                     self.mongo_collection.insert_many(statuses)
-                logging.info("    saved {} items.".format(statuses))
+                logging.info("    saved {} items.".format(len(statuses)))

@@ -43,7 +43,7 @@ class Favorites(Base):
                 except tweepy.TweepError as err:
                     logging.error(traceback.format_exc())
                     continue
-                logging.info("    received {} items.".format(favs))
+                logging.info("    received {} items.".format(len(favs)))
 
                 if favs:
                     for f in favs:
@@ -51,4 +51,4 @@ class Favorites(Base):
                         f["_crawled_at"] = datetime.datetime.utcnow()
                         f["_created_by"] = user["user_id"]
                     self.mongo_collection.insert_many(favs)
-                logging.info("    saved {} items.".format(favs))
+                logging.info("    saved {} items.".format(len(favs)))
