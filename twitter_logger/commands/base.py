@@ -126,7 +126,7 @@ class Base(object):
                     self.target_users += self._parse_target_users_file(f)
 
         if self.options.get("USER"):
-            self.target_users += self.options.get("USER")
+            self.target_users += self._parse_target_users(self.options.get("USER"))
 
     def _parse_credential_file(self, f):
         """Load Twitter credential from YAML file."""
@@ -135,6 +135,16 @@ class Base(object):
         self.consumer_secret = credential["consumer_secret"]
         self.access_key = credential["access_key"]
         self.access_secret = credential["access_secret"]
+
+    def _parse_target_users(self, users):
+        target_users = []
+        for u in users:
+            target_user = {
+                "screen_name": u,
+                "user_id": None,
+            }
+            target_users.append(target_user)
+        return target_users
 
     def _parse_target_users_file(self, f):
         """Load target users from file."""
