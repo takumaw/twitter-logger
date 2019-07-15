@@ -49,6 +49,6 @@ class Favorites(Base):
                     for f in favs:
                         common.parse_created_at(f)
                         f["_crawled_at"] = datetime.datetime.utcnow()
-                        f["_created_by"] = user["user_id"]
+                        f["_by_user_id"] = user["user_id"]
                     self.mongo_collection.insert_many(favs)
                 logging.info("    saved {} items.".format(len(favs)))
