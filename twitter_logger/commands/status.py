@@ -29,7 +29,7 @@ class Status(Base):
                 logging.info(u"Archiving {}".format(user["screen_name"]))
                 last_tweet = self.mongo_collection.find_one(
                     {"user.id": user["user_id"]},
-                    sort=[("id", pymongo.DESCENDING)])
+                    sort=[("_crawled_at", pymongo.DESCENDING)])
                 since_id = last_tweet["id"] if last_tweet else None
                 statuses = []
                 try:

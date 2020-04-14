@@ -28,8 +28,8 @@ class Favorites(Base):
             for user in self.target_users:
                 logging.info("Archiving {}".format(user["screen_name"]))
                 last_tweet = self.mongo_collection.find_one(
-                    {"favorited_by_user_id": user["user_id"]},
-                    sort=[("id", pymongo.DESCENDING)])
+                    {"_by_user_id": user["user_id"]},
+                    sort=[("_crawled_at", pymongo.DESCENDING)])
                 since_id = last_tweet["id"] if last_tweet else None
                 favs = []
                 try:
